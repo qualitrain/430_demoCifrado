@@ -11,7 +11,6 @@ public class CifradorAsimetrico {
 
 	public static void main(String[] args) throws Exception {
 		
-        // Generar par de claves (como en el paso anterior)
         KeyPairGenerator generadorParLlaves = KeyPairGenerator.getInstance("RSA");
         generadorParLlaves.initialize(2048);
         KeyPair parLlaves = generadorParLlaves.generateKeyPair();
@@ -23,6 +22,7 @@ public class CifradorAsimetrico {
         PrivateKey llavePrivada = parLlaves.getPrivate();
         test_Cifrado_con_LlavePrivada(llavePrivada);
 	}
+
 
 	private static void test_Cifrado_con_LlavePublica(PublicKey llavePublica) throws Exception {
 		System.out.println("\ntest_Cifrado_con_LlavePublica() ----------\n");
